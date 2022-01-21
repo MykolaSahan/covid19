@@ -1,38 +1,182 @@
-.App {
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #f5f6fa;
+}
+
+.app {
+  padding: 20px;
+}
+
+.app__header > h1 {
+  color: #fc3c3c;
+  font-size: 2rem;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+/* .app__left {
+  flex: 0.9;
+} */
+
+.app__right {
+  display: flex;
+  flex-direction: column; 
+  border-radius: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app__right--border {
+  border-radius: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app__right .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app__graphTitle {
+  margin: 20px 0;
+}
+
+.app__stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app__graph {
+  flex-grow: 1;
+}
+
+.infoBox {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.infoBox:not(:last-child) {
+  margin-right: 15px;
+}
+
+.infoBox__selected {
+  border-top: 10px solid greenyellow;
+}
+
+.infoBox__red {
+  border-color: red;
+}
+
+.infoBox__cases {
+  color: #cc1034;
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.infoBox__cases--green {
+  color: lightgreen !important;
+}
+
+.infoBox__total {
+  color: #6c757d;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+  margin-top: 15px !important;
+}
+
+.table {
+  margin-top: 20px;
+  overflow-y: scroll;
+  height: 500px;
+  color: '#6a5d5d';
+  font-weight: 600;
+}
+
+.table.world {
+  background-color: #DFDFDF;
+}
+
+.table th, .table td {
+  border: 1px solid lightgray;
+}
+
+.table .today__cases {
+  background-color: #FFEEAA;
+}
+
+.table .today__deaths {
+  background-color: #FF0000;
+  color: #ffffff;
+}
+
+.table .today__recovered {
+  background-color: #8ACA2B;
+}
+
+.table__top {
+  position: static;
+}
+
+.table td {
+  padding: 0.5rem;
+}
+
+.table tr:nth-of-type(odd) {
+  background-color: #f3f2f8;
+}
+
+.map {
+  height: 500px;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 20px;
+  margin-top: 16px;
+  box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
+}
+
+.map .leaflet-container {
+  height: 100%;
+}
+
+.info__container {
+  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.info__flag img {
+  height: 80px;
+  border-radius: 5px;
+  border-radius: 8px;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.info__name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+}
+
+.info__confirmed,
+.info__recovered,
+.info__deaths {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+@media (max-width: 990px) {
+  .app {
+    flex-direction: column;
   }
 }
